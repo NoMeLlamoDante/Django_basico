@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+
+{% block tittle_tab %}
+Home
+{% endblock %}
+
+
+{% block content %}
+<a href="/">home</a>
+<br>
+<h1>Cursos - Ifortab</h1>
+<br>
+<a href="/curso/crear/"> Agregar Curso </a>
+<br><br>
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Descripcion</th>
+            <th>Borrar</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for curso in curso_list %}
+            <tr>
+                <td>{{ curso.id }}</td>
+                <td><a href="/curso/actualizar/{{ curso.pk }}/">{{ curso.descripcion }}</a></td>
+                <td><a href="/curso/borrar/{{ curso.pk }}">borrar</a></td>
+            </tr>
+        {% endfor%}
+    </tbody>
+</table>
+{% endblock %}

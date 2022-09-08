@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block tittle_tab %}
+Crear Curso - Ifortab
+{% endblock %}
+
+
+{% block content %}
+<h1> Nuevo Curso </h1>
+
+<form action="" method="post">
+    {% csrf_token %}
+    <label for="">Descripcion</label>
+    <br>
+    <textarea name="descripcion" id="" cols="30" rows="10"></textarea>
+    <br>
+    <input type="submit">
+</form>
+{% endblock %}

@@ -16,8 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from website.views import index
+from cursos.views import createCurso
+from cursos.views import list_curso
+from cursos.views import update_curso
+from cursos.views import delete_curso
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", index),
+    path("curso/crear/", createCurso),
+    path("curso/lista/", list_curso),
+    path("curso/actualizar/<int:pk>/", update_curso),
+    path("curso/borrar/<int:pk>/", delete_curso),
 ]
